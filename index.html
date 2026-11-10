@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <header>
+            <div>
+                <h1>Employee Management</h1>
+                <p>Manage your team members</p>
+            </div>
+            <button id="addBtn">+ Add Employee</button>
+        </header>
+
+        <section class="stats">
+            <div class="card">
+                <h3>Total Employees</h3>
+                <h2 id="totalEmployees">0</h2>
+            </div>
+            <div class="card">
+                <h3>Active Employees</h3>
+                <h2 id="activeEmployees">0</h2>
+            </div>
+            <div class="card">
+                <h3>Departments</h3>
+                <h2 id="departments">0</h2>
+            </div>
+        </section>
+
+        <section class="employee-section">
+            <div class="section-header">
+                <h2>Employee List</h2>
+                <input type="text" id="searchInput"
+                    placeholder="Search employees...">
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Department</th>
+                            <th>Position</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="employeeTable"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <div id="employeeModal" class="modal">
+            <div class="modal-content">
+                <h2 id="modalTitle">Add Employee</h2>
+
+                <form id="employeeForm">
+                    <input type="hidden" id="employeeId">
+
+                    <label>Employee Name</label>
+                    <input type="text" id="name" required>
+
+                    <label>Email</label>
+                    <input type="email" id="email" required>
+
+                    <label>Department</label>
+                    <select id="department" required>
+                        <option value="">Select Department</option>
+                        <option>IT</option>
+                        <option>HR</option>
+                        <option>Finance</option>
+                        <option>Marketing</option>
+                        <option>Operations</option>
+                    </select>
+
+                    <label>Position</label>
+                    <input type="text" id="position" required>
+
+                    <label>Status</label>
+                    <select id="status">
+                        <option>Active</option>
+                        <option>Inactive</option>
+                    </select>
+
+                    <div class="form-buttons">
+                        <button type="submit">Save Employee</button>
+                        <button type="button" id="cancelBtn">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
